@@ -7,7 +7,5 @@ public class Clinet {
     public static void main(String[] args) {
         IAccountService as  = new AccountServiceImpl();
         as.saveAccount();// dao→service→ui client，last output dao of value;
-
-
     }
 }
