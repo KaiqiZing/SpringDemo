@@ -14,7 +14,7 @@ import java.util.Properties;
 *
 * */
 // 优化多列模式到单例模式
-public class BeanFactory {
+public class BeanFactory单例模式 {
     /*
     * 用工厂模式创建对象，读取配置文件信息，反射到需要的对象中
     * 1.定义一个properties;
@@ -24,7 +24,7 @@ public class BeanFactory {
     static {
         try {
             props =  new Properties();
-            InputStream in = BeanFactory.class.getClassLoader().getResourceAsStream("bean.properties");
+            InputStream in = BeanFactory单例模式.class.getClassLoader().getResourceAsStream("bean.properties");
             props.load(in);
             //实例化容器
             beans = new HashMap<>();
