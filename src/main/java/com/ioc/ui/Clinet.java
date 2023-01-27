@@ -35,7 +35,7 @@ public class Clinet {
         IAccountService iAccountService = (IAccountService)applicationContext.getBean("accountService");
         IAccountDao iAccountDao = applicationContext.getBean("accountDao", IAccountDao.class);
         System.out.println("ApplicationContext"+iAccountDao);
-        System.out.println("ApplicationContext"+ iAccountService);
+        System.out.println("Applicati+onContext"+ iAccountService);
 
 
         // BeanFactory=====
