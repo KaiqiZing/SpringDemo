@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Spring_Basic_Project" />
         <module name="SpringDemo" />
+        <module name="day01_eesy01_jdbc" />
       </profile>
     </annotationProcessing>
   </component>
