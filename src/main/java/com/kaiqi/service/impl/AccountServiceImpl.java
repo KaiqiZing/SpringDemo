@@ -10,6 +10,7 @@ import com.kaiqi.service.IAccountService;
  */
 public class AccountServiceImpl implements IAccountService {
 //    private IAccountDao accountDao = new AccountDaoImpl();
+
     private  IAccountDao accountDao = (IAccountDao) BeanFactory.getBean("accountDao");
     @Override
     public void saveAccount() {

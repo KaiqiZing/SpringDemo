@@ -14,6 +14,7 @@ public class Clinet {
         ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
         IAccountService as  = (IAccountService)ac.getBean("accountService");
         as.saveAccount();
+        // 手动关闭容器
         ac.close();
 
     }
