@@ -22,4 +22,45 @@ public class AccountServiceTest {
             System.out.println(account);
         }
     }
+
+    @Test
+    public void testFindone(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+//        IAccountService as = ac.getBean("accountService", IAccountService.class);
+        IAccountService as = (IAccountService)ac.getBean("accountService");
+        Account account = as.findAccountById(1);
+        System.out.println("查询指定参数："+ account);
+
+    }
+
+
+    @Test
+    public  void testSave(){
+        Account account = new Account();
+        account.setName("test");
+        account.setMoney(12345f);
+
+    }
+    @Test
+    public void testUpdate(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+//        IAccountService as = ac.getBean("accountService", IAccountService.class);
+        IAccountService as = (IAccountService)ac.getBean("accountService");
+        Account account = as.findAccountById(4);
+        account.setMoney(233f);
+        as.updateAccount(account);
+
+    }
+
+    @Test
+    public void testDelete(){
+
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+//        IAccountService as = ac.getBean("accountService", IAccountService.class);
+        IAccountService as = (IAccountService)ac.getBean("accountService");
+        as.deleteAccount(4);
+
+
+    }
+
 }
