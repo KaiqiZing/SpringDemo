@@ -1,10 +1,10 @@
-package com.account_annoioc.service;
+package com.account_xmlioc.dao;
 
-import com.account_annoioc.domain.Account;
+import com.account_xmlioc.domain.Account;
 
 import java.util.List;
 
-public interface IAccountService {
+public interface IAccountDao {
 
 
     /**

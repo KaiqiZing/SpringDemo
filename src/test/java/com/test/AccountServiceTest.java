@@ -1,7 +1,7 @@
 package com.test;
 
-import com.account_annoioc.domain.Account;
-import com.account_annoioc.service.IAccountService;
+import com.account_xmlioc.domain.Account;
+import com.account_xmlioc.service.IAccountService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -13,7 +13,7 @@ import java.util.List;
 public class AccountServiceTest {
     @Test
     public void testFindAll(){
-        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
 //        IAccountService as = ac.getBean("accountService", IAccountService.class);
         IAccountService as = (IAccountService)ac.getBean("accountService");
 
@@ -26,7 +26,7 @@ public class AccountServiceTest {
     @Test
     public void testFindOne() {
         //1.获取容易
-        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
         //2.得到业务层对象
         IAccountService as = ac.getBean("accountService",IAccountService.class);
         //3.执行方法
@@ -40,7 +40,7 @@ public class AccountServiceTest {
         account.setName("test");
         account.setMoney(12345f);
         //1.获取容易
-        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
         //2.得到业务层对象
         IAccountService as = ac.getBean("accountService",IAccountService.class);
         //3.执行方法
@@ -51,7 +51,7 @@ public class AccountServiceTest {
     @Test
     public void testUpdate() {
         //1.获取容易
-        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
         //2.得到业务层对象
         IAccountService as = ac.getBean("accountService",IAccountService.class);
         //3.执行方法
@@ -63,7 +63,7 @@ public class AccountServiceTest {
     @Test
     public void testDelete() {
         //1.获取容易
-        ApplicationContext ac = new ClassPathXmlApplicationContext("account_annoioc.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
         //2.得到业务层对象
         IAccountService as = ac.getBean("accountService",IAccountService.class);
         //3.执行方法

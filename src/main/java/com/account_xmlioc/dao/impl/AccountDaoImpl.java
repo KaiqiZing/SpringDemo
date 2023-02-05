@@ -1,7 +1,7 @@
-package com.account_annoioc.dao.impl;
+package com.account_xmlioc.dao.impl;
 
-import com.account_annoioc.dao.IAccountDao;
-import com.account_annoioc.domain.Account;
+import com.account_xmlioc.dao.IAccountDao;
+import com.account_xmlioc.domain.Account;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;

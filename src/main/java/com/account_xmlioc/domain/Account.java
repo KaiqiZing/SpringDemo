@@ -1,4 +1,4 @@
-package com.account_annoioc.domain;
+package com.account_xmlioc.domain;
 
 import java.io.Serializable;
 
