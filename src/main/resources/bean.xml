@@ -6,9 +6,9 @@
 
     <!--把对象的创建交给spring来管理-->
     <!--此处为IOC模块配置文件-->
-<!--    <bean id="accountService" class="com.ioc.service.impl.AccountServiceImpl"></bean>-->
+    <bean id="accountService" class="com.ioc.service.impl.AccountServiceImpl"></bean>
 
-<!--    <bean id="accountDao" class="com.ioc.dao.impl.AccountDaoImpl"></bean>-->
+    <bean id="accountDao" class="com.ioc.dao.impl.AccountDaoImpl"></bean>
 
 
 
@@ -64,9 +64,8 @@
                 活着：对象只要是在使用过程中就一直活着。
                 死亡：当对象长时间不用，且没有别的对象引用时，由Java的垃圾回收器回收
      -->
-
-    <bean id="accountService" class="com.bean.service.impl.AccountServiceImpl"
-          scope="singleton" init-method="init" destroy-method="destory"></bean>
+<!--    <bean id="accountService" class="com.bean.service.impl.AccountServiceImpl"-->
+<!--          scope="singleton" init-method="init" destroy-method="destory"></bean>-->
 
 
 

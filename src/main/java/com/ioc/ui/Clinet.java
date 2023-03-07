@@ -12,12 +12,12 @@ import org.springframework.core.io.Resource;
 
 
 /**
- * 获取spring的Ioc核心容器，并根据id获取对象
+ * 获取spring的Ioc核心容器，并根据id获取对象 （inversion of control==控制反转）
+ * 主要用来解决程序间的依赖关系
  *
  * ApplicationContext的三个常用实现类：
  *      ClassPathXmlApplicationContext：它可以加载类路径下的配置文件，要求配置文件必须在类路径下。不在的话，加载不了。(更常用)
  *      FileSystemXmlApplicationContext：它可以加载磁盘任意路径下的配置文件(必须有访问权限）
- *
  *      AnnotationConfigApplicationContext：它是用于读取注解创建容器的，是明天的内容。
  *
  * 核心容器的两个接口引发出的问题：
@@ -31,9 +31,12 @@ public class Clinet {
 
     public static void main(String[] args) {
 
+        // 获取核心容器对象
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
-        IAccountService iAccountService = (IAccountService)applicationContext.getBean("accountService");
-        IAccountDao iAccountDao = applicationContext.getBean("accountDao", IAccountDao.class);
+        //regard id get bean object
+//        IAccountService iAccountService = (IAccountService)applicationContext.getBean("accountService");
+        IAccountService iAccountService = applicationContext.getBean("accountService", IAccountService.class) ; // 获取到object类型进行强制转换
+        IAccountDao iAccountDao = applicationContext.getBean("accountDao", IAccountDao.class); // 获取到字节码文件进行强转
         System.out.println("ApplicationContext"+iAccountDao);
         System.out.println("Applicati+onContext"+ iAccountService);
 

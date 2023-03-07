@@ -6,7 +6,7 @@ import com.kaiqi.factory.BeanFactory;
 import com.kaiqi.service.IAccountService;
 
 /**
- * 账户的持久层实现类
+ * 账户的业务层实现类
  */
 public class AccountServiceImpl implements IAccountService {
 //    private IAccountDao accountDao = new AccountDaoImpl();
