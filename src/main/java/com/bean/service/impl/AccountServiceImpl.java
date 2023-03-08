@@ -8,7 +8,7 @@ import com.kaiqi.dao.IAccountDao;
  */
 public class AccountServiceImpl implements IAccountService {
     public AccountServiceImpl(){
-        System.out.println("对象创建了");
+        System.out.println("构造函数---对象创建了");
     }
 
     public void saveAccount(){

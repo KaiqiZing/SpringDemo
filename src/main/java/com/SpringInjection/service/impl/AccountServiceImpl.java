@@ -20,7 +20,9 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     public void  saveAccount(){
+        System.out.println("=======构造函数的注入====");
         System.out.println("service中的saveAccount方法执行了。。。"+name+","+age+","+birthday);
+        System.out.println("在获取bean对象时，注入数据是必须的操作，否则对象无法创建成功");
     }
 
 

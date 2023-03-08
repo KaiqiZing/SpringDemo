@@ -36,8 +36,6 @@ import org.springframework.context.annotation.PropertySource;
  */
 @ComponentScan("com.annoioc_without")
 @Import(JdbcConfig.class)
-@PropertySource("classpath:jdbcConfig.properties")
+@PropertySource("classpath:jdbcConfig.properties") //  如果是类路径注意要制定classpath类路径下
 public class SpringConfiguration {
-
-
 }

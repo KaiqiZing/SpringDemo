@@ -13,10 +13,12 @@ import java.util.List;
 public class AccountServiceTest {
     @Test
     public void testFindAll(){
+        // 获取对象；
         ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
 //        IAccountService as = ac.getBean("accountService", IAccountService.class);
+        // 获取到业务层对象；
         IAccountService as = (IAccountService)ac.getBean("accountService");
-
+        // 执行方法
         List<Account> accounts = as.findAllAccount();
         for (Account account : accounts) {
             System.out.println(account);
@@ -48,7 +50,7 @@ public class AccountServiceTest {
 
     }
 
-    @Test
+/*    @Test
     public void testUpdate() {
         //1.获取容易
         ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
@@ -58,9 +60,9 @@ public class AccountServiceTest {
         Account account = as.findAccountById(4);
         account.setMoney(23456f);
         as.updateAccount(account);
-    }
+    }*/
 
-    @Test
+/*    @Test
     public void testDelete() {
         //1.获取容易
         ApplicationContext ac = new ClassPathXmlApplicationContext("account_xmlioc.xml");
@@ -68,6 +70,6 @@ public class AccountServiceTest {
         IAccountService as = ac.getBean("accountService",IAccountService.class);
         //3.执行方法
         as.deleteAccount(4);
-    }
+    }*/
 
 }

@@ -34,10 +34,10 @@ public class AccountServiceImpl3 implements IAccountService {
     @Override
     public void saveAccount() {
         System.out.println(Arrays.toString(myStrs));
-        System.out.println(myList);
-        System.out.println(mySet);
-        System.out.println(myMap);
-        System.out.println(myProps);
+        System.out.println("这是数组："+myList);
+        System.out.println("这是set:  "+mySet);
+        System.out.println("这是map"+myMap);
+        System.out.println("这是myprops:"+myProps);
 
     }
 }

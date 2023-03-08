@@ -32,7 +32,8 @@ public class Clinet {
         // 获取核心容器对象
         ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("springIOC.xml");
         IAccountService as = (IAccountService)ac.getBean("accountService");
-//        IAccountService as2 = (IAccountService)ac.getBean("")
+        IAccountService as2 = (IAccountService)ac.getBean("accountService");
+        System.out.println(as == as2);
         as.saveAccount();
         ac.close();
     }

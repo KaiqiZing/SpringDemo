@@ -25,6 +25,7 @@ public class AccountServiceImpl2 implements IAccountService {
 
     @Override
     public void saveAccount() {
-        System.out.println("service方法执行了set方法的注入："+name+age+birthday);
+        System.out.println("set方法的注入方式====");
+        System.out.println("service2方法执行了set方法的注入："+name+age+birthday);
     }
 }
