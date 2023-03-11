@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 /**
- * 动态代理：
+ * 动态代理：这种代理不支持子类的代理
  *  特点：字节码随用随创建，随用随加载
  *  作用：不修改源码的基础上对方法增强
  *  分类：
