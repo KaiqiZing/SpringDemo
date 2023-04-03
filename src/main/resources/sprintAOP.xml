@@ -63,7 +63,14 @@
             <!-- 标准表达式-->
 <!--            <aop:before method="printLog" pointcut="execution(public void com.springAOP.service.AccountServiceImpl.saveAccount())"></aop:before>-->
             <!-- 全通配写法-->
-            <aop:before method="printLog" pointcut="execution(* *..*.*(..))"></aop:before>
+<!--            <aop:before method="printLog" pointcut="execution(* *..*.*(..))"></aop:before>-->
+            <!-- 包名可以使用..表示当前包及其子包-->
+<!--            <aop:before method="printLog" pointcut="execution(* *..AccountServiceImpl.deleteAccount())"></aop:before>-->
+
+            <!-- 实际开发写法只强调需要增强的业务层方法，不是所有方法-->
+            <aop:before method="printLog" pointcut="execution(* com.springAOP.service.*.*(..))"></aop:before>
+
+
 
         </aop:aspect>
     </aop:config>
