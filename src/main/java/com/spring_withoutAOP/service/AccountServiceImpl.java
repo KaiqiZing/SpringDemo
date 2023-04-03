@@ -103,11 +103,10 @@ public class AccountServiceImpl implements IAccountService{
             target.setMoney(target.getMoney()+money);
             //2.5更新转出账户
             iAccountDao.updateAccount(source);
-            int i = 1/0;  //java.lang.ArithmeticException: / by zero PRODUCT ERROR EXPLAIN TRANSACTION DEAL IS SUCCESS
             //2.6更新转入账户
             iAccountDao.updateAccount(target);
             transactionManager.commit();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             transactionManager.rollback();
             e.printStackTrace();
         }finally {
