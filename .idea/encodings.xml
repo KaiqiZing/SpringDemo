@@ -3,6 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/AnnotationAOP" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/Day04_JDBC_Template_XML/dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/Day04_JDBC_Template_XML/domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/Day04_JDBC_Template_XML/service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/springadviceType" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
