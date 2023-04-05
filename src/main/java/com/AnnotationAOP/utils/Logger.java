@@ -1,11 +1,22 @@
-package com.springadviceType.utils;
+package com.AnnotationAOP.utils;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 /*用于记录日志的工具类，提供公共的代码
 * 在切入点之前执行*/
-public class Logger {
+@Component("logger")
+@Aspect // 表示当前类是一个切面类
 
+public class Logger {
+    @Pointcut("execution(* com.AnnotationAOP.service.*.*(..))")
+    private void pt1(){
+
+    }
     /**
      * 前置通知
      */
@@ -46,6 +57,8 @@ public class Logger {
      * spring中的环绕通知：
      *      它是spring框架为我们提供的一种可以在代码中手动控制增强方法何时执行的方式。
      */
+
+    @Around("pt1()")
     public Object aroundPringLog(ProceedingJoinPoint pjp){
         Object rtValue = null;
         try{
