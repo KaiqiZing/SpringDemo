@@ -16,16 +16,16 @@
 
     <!--配置AOP-->
     <aop:config>
+        <!-- 配置切入点表达式 id属性用于指定表达式的唯一标识。expression属性用于指定表达式内容
+       此标签写在aop:aspect标签内部只能当前切面使用。
+       它还可以写在aop:aspect外面，此时就变成了所有切面可用
+        -->
         <!--配置切面 -->
         <aop:pointcut id="pt1" expression="execution(* com.springadviceType.service.*.*(..))"></aop:pointcut>
 
         <aop:aspect id="logAdvice" ref="logger">
-
-
-<!--            配置最终通知：无论切入点方法是否正常执行它都会在其后面执行-->
-            <aop:after method="afterPrintLog" pointcut-ref="pt1"></aop:after>
-
+            <!-- 配置环绕通知 详细的注释请看Logger类中 注意环绕通知的logger的配置在此处-->
+            <aop:around method="aroundPringLog" pointcut-ref="pt1"></aop:around>
         </aop:aspect>
     </aop:config>
-
 </beans>

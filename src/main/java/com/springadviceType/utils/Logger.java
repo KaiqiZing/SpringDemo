@@ -1,4 +1,8 @@
 package com.springadviceType.utils;
+
+import org.apache.ibatis.ognl.ObjectElementsAccessor;
+import org.aspectj.lang.ProceedingJoinPoint;
+
 /*用于记录日志的工具类，提供公共的代码
 * 在切入点之前执行*/
 public class Logger {
@@ -27,5 +31,32 @@ public class Logger {
      */
     public  void afterPrintLog(){
         System.out.println("最终通知Logger类中的afterPrintLog方法开始记录日志了。。。");
+    }
+    /*环绕通知：
+    * 问题 当我们配置了环绕通知之后切入点方法没有执行，而是只执行通知方法
+    * 分析： 通过对比动态代理中的环绕通知代码，发现动态代理的环绕通知有明确的切入点调用代码中却没有
+    * 解决：
+    *   spring框架提供了ProcessdingJoinPoint,该接口有一个方法proceed()  此方法就相当于明确调用该接口可以作为环绕通知的方法参数
+    * 在程序执行时，Spring框架会为我们提供该接口的实现类供我们使用
+    * Spring中的环绕通知可以为我们提供一种可以在代码中手动控制增强方法何时执行的方式
+    * */
+    public Object aroundPringLog(ProceedingJoinPoint proceedingJoinPoint) {
+        Object rtValue = null;
+        try{
+            Object[] args = proceedingJoinPoint.getArgs(); // 得到该方法所需的参数
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。前置");
+
+            rtValue = proceedingJoinPoint.proceed(args); // 明确调用业务层方法--切入点
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。后置");
+
+            return rtValue;
+        }catch(Throwable t){
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。异常");
+
+            throw new RuntimeException(t);
+        }finally {
+            System.out.println("Logger类中的aroundPringLog方法开始记录日志了。。。最终");
+
+        }
     }
 }
