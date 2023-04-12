@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * 使用Junit单元测试：测试我们的配置
+ * 使用Junit单元测试：测试我们的配置,这是使用xml的事物控制
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:Day04_JDBC_Template_XML.xml")
